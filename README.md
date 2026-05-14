@@ -1,17 +1,13 @@
 
-# Loop MVP Baseline
+# Loop Step 7
 
-Integrated rebuild containing:
-- Modular architecture
-- Round capture flow
-- Structured round state model
-- Insight engine foundation
-- Progression storytelling
-- Momentum/confidence layer
-- Practice recommendations
-- Stable Vercel-ready setup
+Dynamic progression timeline system.
 
-## Run
-
-npm install
-npm run dev
+Included:
+- Narrative progression timeline
+- Round-to-round storytelling
+- Time-based interpretation
+- Emerging challenge system
+- Momentum continuity
+- Contextual progression summaries
+- Coaching-style evolution language

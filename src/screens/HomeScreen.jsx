@@ -1,32 +1,53 @@
 
-import { buildProgressionStory } from "../features/progress/progressionEngine";
+import { buildTimeline } from "../features/timeline/timelineEngine";
+import { buildProgressionNarrative } from "../features/interpretation/progressionNarratives";
 
-export default function HomeScreen({ roundData, onStart }) {
-  const story = buildProgressionStory(roundData.scoreHistory);
+export default function HomeScreen({ rounds }) {
+  const timeline = buildTimeline(rounds);
+
+  const narrative = buildProgressionNarrative(rounds);
 
   return (
     <div className="screen">
       <div className="hero-card">
-        <p className="eyebrow">Momentum</p>
-        <h1>{story.momentum}</h1>
-        <p>{story.summary}</p>
+        <p className="eyebrow">Progression Story</p>
+
+        <h1>{narrative.title}</h1>
+
+        <p>{narrative.text}</p>
       </div>
 
-      <div className="metric-grid">
-        <div className="metric-card">
-          <span>Confidence</span>
-          <strong>{story.confidence}%</strong>
-        </div>
+      <div className="timeline-wrapper">
+        {timeline.map((item, index) => (
+          <div className="timeline-item" key={index}>
+            <div className="timeline-marker" />
 
-        <div className="metric-card">
-          <span>Current Focus</span>
-          <strong>{story.focus}</strong>
-        </div>
+            <div className="timeline-content">
+              <p className="timeline-label">{item.label}</p>
+
+              <h3>{item.focus}</h3>
+
+              <p>{item.summary}</p>
+
+              <span className="score-pill">
+                {item.score}
+              </span>
+            </div>
+          </div>
+        ))}
       </div>
 
-      <button className="primary-button" onClick={onStart}>
-        Start New Round
-      </button>
+      <div className="focus-card">
+        <p className="eyebrow">Emerging Next Challenge</p>
+
+        <h2>
+          Turn strong approach play into lower scoring rounds
+        </h2>
+
+        <p>
+          The next scoring leap is likely to come from converting more opportunities inside realistic birdie range.
+        </p>
+      </div>
     </div>
   );
 }
