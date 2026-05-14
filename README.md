@@ -1,17 +1,13 @@
 
-# Loop MVP Baseline
+# Loop Step 10
 
-Integrated rebuild containing:
-- Modular architecture
-- Round capture flow
-- Structured round state model
-- Insight engine foundation
-- Progression storytelling
-- Momentum/confidence layer
-- Practice recommendations
-- Stable Vercel-ready setup
+Identity tension engine.
 
-## Run
-
-npm install
-npm run dev
+Included:
+- Emotional contradiction detection
+- Identity tension modelling
+- Confidence vs scoring interpretation
+- Emotional golf storytelling
+- Human-style behavioural observations
+- Tension-aware progression framing
+- Coaching-style emotional reflection
