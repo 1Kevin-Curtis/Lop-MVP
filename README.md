@@ -1,17 +1,13 @@
 
-# Loop MVP Baseline
+# Loop Step 13
 
-Integrated rebuild containing:
-- Modular architecture
-- Round capture flow
-- Structured round state model
-- Insight engine foundation
-- Progression storytelling
-- Momentum/confidence layer
-- Practice recommendations
-- Stable Vercel-ready setup
+Ambiguity and contradiction layer.
 
-## Run
-
-npm install
-npm run dev
+Included:
+- Signal confidence states
+- Contradictory evidence modelling
+- Coaching restraint language
+- Ambiguity-aware interpretation
+- Emotional inconsistency detection
+- Emerging vs stable pattern logic
+- Behavioural realism refinement
