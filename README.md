@@ -1,17 +1,12 @@
 
-# Loop MVP Baseline
+# Loop Step 5
 
-Integrated rebuild containing:
-- Modular architecture
-- Round capture flow
-- Structured round state model
-- Insight engine foundation
-- Progression storytelling
-- Momentum/confidence layer
-- Practice recommendations
-- Stable Vercel-ready setup
+Skill volatility and confidence modelling layer.
 
-## Run
-
-npm install
-npm run dev
+Included:
+- Volatility analysis
+- Scoring consistency model
+- Stability classification
+- Confidence signal generation
+- Narrative interpretation layer
+- Emerging vs volatile skill detection

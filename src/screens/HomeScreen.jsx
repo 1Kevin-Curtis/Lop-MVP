@@ -1,32 +1,39 @@
 
-import { buildProgressionStory } from "../features/progress/progressionEngine";
+import { buildSkillModel } from "../features/rounds/volatilityModel";
+import { generateVolatilityNarratives } from "../features/insights/volatilityNarratives";
 
-export default function HomeScreen({ roundData, onStart }) {
-  const story = buildProgressionStory(roundData.scoreHistory);
+export default function HomeScreen({ rounds }) {
+  const model = buildSkillModel(rounds);
+
+  const narratives = generateVolatilityNarratives(model);
 
   return (
     <div className="screen">
       <div className="hero-card">
-        <p className="eyebrow">Momentum</p>
-        <h1>{story.momentum}</h1>
-        <p>{story.summary}</p>
+        <p className="eyebrow">Consistency Model</p>
+        <h1>{model.stability}</h1>
+        <p>
+          Average Score: {model.averageScore} • Volatility: {model.volatility}
+        </p>
       </div>
 
-      <div className="metric-grid">
-        <div className="metric-card">
-          <span>Confidence</span>
-          <strong>{story.confidence}%</strong>
+      {narratives.map((item, index) => (
+        <div className="insight-card" key={index}>
+          <h3>{item.title}</h3>
+          <p>{item.text}</p>
         </div>
+      ))}
 
-        <div className="metric-card">
-          <span>Current Focus</span>
-          <strong>{story.focus}</strong>
-        </div>
+      <div className="metric-card">
+        <span>Confidence Signal</span>
+        <strong>
+          {model.stability === "Stable"
+            ? "High Confidence"
+            : model.stability === "Emerging"
+            ? "Developing Confidence"
+            : "Low Confidence"}
+        </strong>
       </div>
-
-      <button className="primary-button" onClick={onStart}>
-        Start New Round
-      </button>
     </div>
   );
 }
