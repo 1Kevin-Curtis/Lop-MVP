@@ -1,8 +1,8 @@
 
 {
-  "name": "loop-mvp",
+  "name": "loop-coaching-memory",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.9.0",
   "type": "module",
   "scripts": {
     "dev": "vite",

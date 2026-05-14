@@ -1,17 +1,13 @@
 
-# Loop MVP Baseline
+# Loop Step 12
 
-Integrated rebuild containing:
-- Modular architecture
-- Round capture flow
-- Structured round state model
-- Insight engine foundation
-- Progression storytelling
-- Momentum/confidence layer
-- Practice recommendations
-- Stable Vercel-ready setup
+Coaching memory system.
 
-## Run
-
-npm install
-npm run dev
+Included:
+- Coaching continuity memory
+- Confidence-aware interpretation
+- Emotional progression tracking
+- Narrative memory system
+- Coaching restraint layer
+- Longitudinal coaching context
+- Integrated coaching orchestration
