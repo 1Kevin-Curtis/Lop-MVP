@@ -1,32 +1,49 @@
 
-import { buildProgressionStory } from "../features/progress/progressionEngine";
+import { analyseRoundMomentum } from "../features/momentum/roundMomentumEngine";
+import { buildReflectiveContinuity } from "../features/reflection/reflectiveContinuityEngine";
 
-export default function HomeScreen({ roundData, onStart }) {
-  const story = buildProgressionStory(roundData.scoreHistory);
+export default function HomeScreen({ roundMoments }) {
+  const reflections = analyseRoundMomentum(roundMoments);
+
+  const continuity = buildReflectiveContinuity(reflections);
 
   return (
     <div className="screen">
       <div className="hero-card">
-        <p className="eyebrow">Momentum</p>
-        <h1>{story.momentum}</h1>
-        <p>{story.summary}</p>
+        <p className="eyebrow">Reflective Continuity</p>
+
+        <h1>{continuity.title}</h1>
+
+        <p>{continuity.summary}</p>
       </div>
 
-      <div className="metric-grid">
-        <div className="metric-card">
-          <span>Confidence</span>
-          <strong>{story.confidence}%</strong>
-        </div>
+      {reflections.map((reflection, index) => (
+        <div className="reflection-card" key={index}>
+          <p className="eyebrow">Momentum Reflection</p>
 
-        <div className="metric-card">
-          <span>Current Focus</span>
-          <strong>{story.focus}</strong>
+          <h2>{reflection.title}</h2>
+
+          <p>{reflection.text}</p>
         </div>
+      ))}
+
+      <div className="continuity-card">
+        <p className="eyebrow">Emotional Continuity</p>
+
+        <p>{continuity.continuity}</p>
       </div>
 
-      <button className="primary-button" onClick={onStart}>
-        Start New Round
-      </button>
+      <div className="focus-card">
+        <p className="eyebrow">Emerging Direction</p>
+
+        <h2>
+          Let the calmer stretches survive momentum swings
+        </h2>
+
+        <p>
+          The next scoring improvements may come from preserving emotional composure for longer after setbacks rather than forcing recovery golf.
+        </p>
+      </div>
     </div>
   );
 }

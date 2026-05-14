@@ -1,17 +1,13 @@
 
-# Loop MVP Baseline
+# Loop Step 14
 
-Integrated rebuild containing:
-- Modular architecture
-- Round capture flow
-- Structured round state model
-- Insight engine foundation
-- Progression storytelling
-- Momentum/confidence layer
-- Practice recommendations
-- Stable Vercel-ready setup
+Reflective continuity layer.
 
-## Run
-
-npm install
-npm run dev
+Included:
+- In-round emotional continuity
+- Momentum swing interpretation
+- Emotional recovery reflections
+- Round phase awareness
+- Reflective momentum storytelling
+- Composure tracking
+- Behavioural round continuity
