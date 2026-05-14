@@ -1,17 +1,13 @@
 
-# Loop MVP Baseline
+# Loop Step 6
 
-Integrated rebuild containing:
-- Modular architecture
-- Round capture flow
-- Structured round state model
-- Insight engine foundation
-- Progression storytelling
-- Momentum/confidence layer
-- Practice recommendations
-- Stable Vercel-ready setup
+Interpretation engine rebuild.
 
-## Run
-
-npm install
-npm run dev
+Included:
+- Human coaching language layer
+- Narrative interpretation engine
+- Hidden progress storytelling
+- Emotional framing system
+- Coaching-style observations
+- Internal model separation
+- Believable progression language
