@@ -1,68 +1,68 @@
 
 import { useState } from "react";
+import useLocalStorage from "./hooks/useLocalStorage";
 import HomeScreen from "./screens/HomeScreen";
-import CourseSetupScreen from "./screens/CourseSetupScreen";
 import CaptureRoundScreen from "./screens/CaptureRoundScreen";
 import RoundCompleteScreen from "./screens/RoundCompleteScreen";
-import PracticeScreen from "./screens/PracticeScreen";
-import BottomNav from "./components/BottomNav";
 
 export default function App() {
   const [screen, setScreen] = useState("home");
 
-  const [roundData, setRoundData] = useState({
-    course: "Sunningdale",
-    tees: "White",
-    holes: [],
-    scoreHistory: [84, 82, 81, 79]
-  });
-
-  const startRound = (course, tees) => {
-    setRoundData(prev => ({
-      ...prev,
-      course,
-      tees,
+  const [rounds, setRounds] = useLocalStorage("loop-rounds", [
+    {
+      id: 1,
+      score: 84,
       holes: []
-    }));
+    },
+    {
+      id: 2,
+      score: 82,
+      holes: []
+    },
+    {
+      id: 3,
+      score: 81,
+      holes: []
+    }
+  ]);
 
-    setScreen("capture");
-  };
+  const [latestRound, setLatestRound] = useState(null);
 
-  const completeRound = (holes) => {
-    const totalScore = holes.reduce((sum, h) => sum + h.score, 0);
+  const saveRound = (holes) => {
+    const score = holes.reduce((sum, h) => sum + h.score, 0);
 
-    setRoundData(prev => ({
-      ...prev,
-      holes,
-      scoreHistory: [...prev.scoreHistory, totalScore]
-    }));
+    const newRound = {
+      id: Date.now(),
+      score,
+      date: new Date().toISOString(),
+      holes
+    };
+
+    setRounds(prev => [...prev, newRound]);
+    setLatestRound(newRound);
 
     setScreen("complete");
   };
 
   return (
-    <div className="app-shell">
+    <div>
       {screen === "home" && (
-        <HomeScreen roundData={roundData} onStart={() => setScreen("setup")} />
-      )}
-
-      {screen === "setup" && (
-        <CourseSetupScreen onStart={startRound} />
+        <HomeScreen
+          rounds={rounds}
+          onStart={() => setScreen("capture")}
+        />
       )}
 
       {screen === "capture" && (
-        <CaptureRoundScreen onComplete={completeRound} />
+        <CaptureRoundScreen onComplete={saveRound} />
       )}
 
       {screen === "complete" && (
-        <RoundCompleteScreen roundData={roundData} />
+        <RoundCompleteScreen
+          latestRound={latestRound}
+          onHome={() => setScreen("home")}
+        />
       )}
-
-      {screen === "practice" && (
-        <PracticeScreen />
-      )}
-
-      <BottomNav onNavigate={setScreen} />
     </div>
   );
 }

@@ -1,17 +1,14 @@
 
-# Loop MVP Baseline
+# Loop Step 4
 
-Integrated rebuild containing:
-- Modular architecture
-- Round capture flow
-- Structured round state model
-- Insight engine foundation
-- Progression storytelling
-- Momentum/confidence layer
-- Practice recommendations
-- Stable Vercel-ready setup
+Persistent intelligence foundation for Loop.
 
-## Run
-
-npm install
-npm run dev
+Included:
+- Multi-round persistence
+- Local storage round history
+- Internal performance modelling
+- Driving / approach / putting dimensions
+- Momentum engine
+- Narrative causality engine
+- Comparative round analysis
+- Stable scalable architecture

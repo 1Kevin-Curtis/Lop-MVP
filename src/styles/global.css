@@ -12,14 +12,12 @@ body {
 
 .screen {
   padding: 24px;
-  padding-bottom: 100px;
+  padding-bottom: 80px;
 }
 
 .hero-card,
-.card,
 .metric-card,
-.insight-card,
-.next-round-card {
+.insight-card {
   background: #13202b;
   border-radius: 20px;
   padding: 20px;
@@ -30,7 +28,6 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
-  margin-bottom: 20px;
 }
 
 .metric-card span {
@@ -40,7 +37,7 @@ body {
 }
 
 .metric-card strong {
-  font-size: 22px;
+  font-size: 28px;
 }
 
 .eyebrow {
@@ -59,23 +56,7 @@ body {
   color: #081018;
   font-size: 16px;
   font-weight: 700;
-}
-
-.bottom-nav {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  padding: 16px;
-  background: #0f1720;
-  border-top: 1px solid rgba(255,255,255,0.08);
-}
-
-.bottom-nav button {
-  background: transparent;
-  border: none;
-  color: white;
+  margin-top: 20px;
 }
 
 .score-selector {
@@ -118,13 +99,4 @@ body {
   background: #83ffb3 !important;
   color: #081018 !important;
   font-weight: 700;
-}
-
-select {
-  width: 100%;
-  padding: 14px;
-  margin-top: 8px;
-  margin-bottom: 18px;
-  border-radius: 12px;
-  border: none;
 }

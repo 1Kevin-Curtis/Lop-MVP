@@ -1,6 +1,5 @@
 
 import { useState } from "react";
-import { createHole } from "../features/rounds/roundFactory";
 
 export default function CaptureRoundScreen({ onComplete }) {
   const [hole, setHole] = useState(1);
@@ -15,7 +14,7 @@ export default function CaptureRoundScreen({ onComplete }) {
 
   const [holes, setHoles] = useState([]);
 
-  const toggleStat = (key) => {
+  const toggle = (key) => {
     setStats(prev => ({
       ...prev,
       [key]: !prev[key]
@@ -23,9 +22,15 @@ export default function CaptureRoundScreen({ onComplete }) {
   };
 
   const saveHole = () => {
-    const holeData = createHole(hole, score, stats);
+    const updated = [
+      ...holes,
+      {
+        hole,
+        score,
+        ...stats
+      }
+    ];
 
-    const updated = [...holes, holeData];
     setHoles(updated);
 
     if (hole === 18) {
@@ -60,28 +65,28 @@ export default function CaptureRoundScreen({ onComplete }) {
       <div className="tag-grid">
         <button
           className={stats.fairwayHit ? "active-tag" : ""}
-          onClick={() => toggleStat("fairwayHit")}
+          onClick={() => toggle("fairwayHit")}
         >
           Fairway Hit
         </button>
 
         <button
           className={stats.gir ? "active-tag" : ""}
-          onClick={() => toggleStat("gir")}
+          onClick={() => toggle("gir")}
         >
           GIR
         </button>
 
         <button
           className={stats.penalty ? "active-tag" : ""}
-          onClick={() => toggleStat("penalty")}
+          onClick={() => toggle("penalty")}
         >
           Penalty
         </button>
 
         <button
           className={stats.threePutt ? "active-tag" : ""}
-          onClick={() => toggleStat("threePutt")}
+          onClick={() => toggle("threePutt")}
         >
           3 Putt
         </button>
