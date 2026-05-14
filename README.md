@@ -1,17 +1,13 @@
 
-# Loop MVP Baseline
+# Loop Step 9
 
-Integrated rebuild containing:
-- Modular architecture
-- Round capture flow
-- Structured round state model
-- Insight engine foundation
-- Progression storytelling
-- Momentum/confidence layer
-- Practice recommendations
-- Stable Vercel-ready setup
+Round identity engine.
 
-## Run
-
-npm install
-npm run dev
+Included:
+- Emotional round archetypes
+- Round identity classification
+- Identity progression timeline
+- Coaching-style summaries
+- Behavioural round interpretation
+- Narrative continuity system
+- Human-style round reflection
