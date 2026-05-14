@@ -1,17 +1,13 @@
 
-# Loop MVP Baseline
+# Loop Step 11
 
-Integrated rebuild containing:
-- Modular architecture
-- Round capture flow
-- Structured round state model
-- Insight engine foundation
-- Progression storytelling
-- Momentum/confidence layer
-- Practice recommendations
-- Stable Vercel-ready setup
+Adaptive coaching system.
 
-## Run
-
-npm install
-npm run dev
+Included:
+- Adaptive coaching stance engine
+- Emotional state interpretation
+- Reinforcing vs stabilising coaching
+- Confidence-aware coaching tone
+- Emotionally adaptive reflections
+- Behavioural coaching framing
+- Human-style coaching cadence

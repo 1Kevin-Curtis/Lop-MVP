@@ -1,8 +1,8 @@
 
 {
-  "name": "loop-mvp",
+  "name": "loop-adaptive-coaching",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.8.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
